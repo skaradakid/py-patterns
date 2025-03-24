@@ -36,7 +36,13 @@ def pattern_3(n):
     ****
     """
     # TODO: Implement n x n square
-    pass
+    string = ""
+    for x in range(1, n+1):
+        for y in range(1, n+1):
+           string += "*"
+        if x != n:
+            string += "\n"
+    return string
 
 def pattern_4(n):
     """Reverse triangle
@@ -64,7 +70,12 @@ def pattern_5(n):
     4
     """
     # TODO: Implement vertical numbers
-    pass
+    string = ""
+    for x in range(1, n+1):
+        string += str(x)
+        if x != n:
+            string += "\n"
+    return string
 
 def pattern_6(n):
     """Centered triangle
@@ -75,7 +86,16 @@ def pattern_6(n):
     *******
     """
     # TODO: Implement centered pyramid
-    pass
+    string = ""
+    space = n-1
+    for x in range(1, n+1):
+        string += " "*space
+        space -= 1
+        for y in range((x*2)-1):
+            string += "*"
+        if x != n:
+            string += "\n"
+    return string
 
 def pattern_7(n):
     """Number pyramid

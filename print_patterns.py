@@ -7,7 +7,13 @@ def pattern_1(n):
     ****
     """
     # TODO: Implement simple right triangle
-    pass
+    string = ""
+    for x in range(1,n+1):
+        for y in range(x):
+            string += "*"
+        if x != n:
+            string += "\n"
+    return string
 
 def pattern_2(n):
     """Number line
@@ -15,7 +21,11 @@ def pattern_2(n):
     1 2 3 4
     """
     # TODO: Implement single line of numbers
-    pass
+    string = ""
+    for x in range(1,n+1):
+        string += str(x)
+        string += " "
+    return string[:-1]
 
 def pattern_3(n):
     """Square of stars
@@ -37,7 +47,13 @@ def pattern_4(n):
     *
     """
     # TODO: Implement reverse right triangle
-    pass
+    string = ""
+    for x in range(n, 0, -1):
+        for y in range(x):
+            string += "*"
+        if x != 1:
+            string += "\n"
+    return string
 
 def pattern_5(n):
     """Number column

@@ -239,7 +239,19 @@ def pattern_13(n):
     ****
     """
     # TODO: Implement hollow square
-    pass
+    string = ""
+    for x in range(1, n+1):
+        for y in range(1, n+1):
+            if x == 1 or x == n:
+                string += "*"
+            else:
+                if y == 1 or y == n:
+                    string += "*"
+                else:
+                    string += " " 
+        if x != n:
+            string += "\n"
+    return string
 
 def pattern_14(n):
     """Number diamond
@@ -253,4 +265,42 @@ def pattern_14(n):
        1
     """
     # TODO: Implement number diamond
-    pass
+    string = ""
+    space = n-1
+    for x in range(1, n+1):
+        string += " "*space
+        space -= 1
+        for y in range(1, x+1):
+            if x == 1 or x ==2:
+                string += f"{x}"
+                if y != x:
+                    string += " "
+            else:
+                if y == 1 or y == x:
+                    string += f"{x}"
+                    if y != x:
+                        string += " "
+                else:
+                    string += " "
+                    if y != x:
+                        string += " "
+        string += "\n"
+    space += 1
+    for x in range(n-1, 0, -1):
+        space += 1
+        string += " "*space
+        for y in range(x, 0, -1):
+            if x == 1 or x == 2:
+                string += f"{x}"
+                if y != 1:
+                    string += " "
+            else:
+                if y == 1 or y == x:
+                    string += f"{x}"
+                else:
+                    string += " "
+                if y != 1:
+                    string += " "
+        if x != 1:
+            string += "\n"
+    return string

@@ -201,7 +201,22 @@ def pattern_11(n):
     1 3 3 1
     """
     # TODO: Implement Pascal's triangle
-    pass
+    import math
+    
+    string = ""
+    count = n - 1
+    space = " "
+    for x in range(n):
+        string += space*count
+        count-=1
+        for i in range(x + 1):
+            string += str(math.comb(x, i))
+            if i != x:
+                string += " "
+        if x != n-1:
+            string += "\n"
+    return string
+    
 
 def pattern_12(n):
     """Hollow triangle

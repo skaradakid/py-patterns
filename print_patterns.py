@@ -106,7 +106,18 @@ def pattern_7(n):
     1 2 3 4
     """
     # TODO: Implement number pyramid
-    pass
+    string = ""
+    space = n-1
+    for x in range(1, n+1):
+        string += " "*space
+        space -= 1
+        for y in range(1,x+1):
+            string += f"{y}"
+            if y != x:
+                string += " "
+        if x != n:
+            string += "\n"
+    return string
 
 def pattern_8(n):
     """Reverse number pyramid
@@ -117,7 +128,18 @@ def pattern_8(n):
        1
     """
     # TODO: Implement reverse number pyramid
-    pass
+    string = ""
+    space = 0
+    for x in range(n, 0, -1):
+        string += " "*space
+        space += 1
+        for y in range(1,x+1):
+            string += f"{y}"
+            if y != x:
+                string += " "
+        if x != 1:
+            string += "\n"
+    return string
 
 def pattern_9(n):
     """Diamond pattern
@@ -131,7 +153,23 @@ def pattern_9(n):
        *
     """
     # TODO: Implement diamond shape
-    pass
+    string = ""
+    space = n-1
+    for x in range(1, n+1):
+        string += " "*space
+        space -= 1
+        for y in range((x*2)-1):
+            string += "*"
+        string += "\n"
+    space += 1
+    for x in range(n-1, 0, -1):
+        space += 1
+        string += " "*space
+        for y in range((x*2)-1):
+            string += "*"
+        if x != 1:
+            string += "\n"
+    return string
 
 def pattern_10(n):
     """Number square
@@ -142,7 +180,17 @@ def pattern_10(n):
     1 2 3 4
     """
     # TODO: Implement number square
-    pass
+    string = ""
+    for x in range(n):
+        for y in range(1,n+1):
+            string += f"{y}"
+            if y != n:
+                string += " "
+        if x != n-1:
+            string += '\n'
+        
+        
+    return string
 
 def pattern_11(n):
     """Pascal's triangle
@@ -164,7 +212,23 @@ def pattern_12(n):
     ****
     """
     # TODO: Implement hollow right triangle
-    pass
+    string = ""
+    for x in range(1,n+1):
+        
+        for y in range(x):
+            if x == 1 or x == 2 or x == n:
+                string += "*"
+            else:
+                if y == 0 or y == x-1:
+                    string += "*"
+                else:
+                    string += " "
+                
+        if x != n:
+            string += "\n"
+        
+    return string
+
 
 def pattern_13(n):
     """Hollow square
